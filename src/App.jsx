@@ -1,18 +1,18 @@
 import { BrowserRouter, Route, Routes } from "react-router";
 
-import UserPlan from "./pages/UserPlan";
+import Plan from "./pages/Plans";
 import AddOns from "./pages/AddOns";
 import Summary from "./pages/Summary";
 import HomePage from "./pages/HomePage";
-import UserInfo from "./pages/UserInfo";
+import Info from "./pages/Info";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />}>
-          <Route index element={<UserInfo />}></Route>
-          <Route path="plan" element={<UserPlan />}></Route>
+          <Route index element={<Info />}></Route>
+          <Route path="plan" element={<Plan />}></Route>
           <Route path="add-ons" element={<AddOns />}></Route>
           <Route path="summary" element={<Summary />}></Route>
         </Route>
