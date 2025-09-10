@@ -8,11 +8,12 @@ export default {
       },
       colors: {
         "marine-blue": "hsl(213, 96%, 18%)",
+        "marine-blue-hover": "hsl(213,72%,31%)",
         "purplish-blue": "hsl(243, 100%, 62%)",
+        "purplish-blue-hover": "hsl(243, 100%, 77%)",
         "pastel-blue": "hsl(228, 100%, 84%)",
         "light-blue": " hsl(206, 94%, 87%)",
         "strawberry-red": "hsl(354, 84%, 57%)",
-        "cool-gray": "hsl(231, 11%, 63%)",
         "light-gray": "hsl(231, 11%, 63%)",
         magnolia: " hsl(217, 100%, 97%)",
         alabaster: "hsl(231, 100%, 99%)",
@@ -24,6 +25,9 @@ export default {
       backgroundImage: {
         "sidebar-desktop": "url('/images/bg-sidebar-desktop.svg')",
         "sidebar-mobile": "url('/images/bg-sidebar-mobile.svg')",
+      },
+      gridTemplateColumns: {
+        custom: "17.125rem minmax(0,1fr) 1fr",
       },
     },
   },
