@@ -4,25 +4,37 @@
 
 @font-face {
   font-family: "Ubuntu";
-  src: url("/src/assets/fonts/Ubuntu-Regular.ttf") format("ttf");
+  src: url("/src/assets/fonts/Ubuntu-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Ubuntu";
-  src: url("/src/assets/fonts/Ubuntu-Medium.ttf") format("ttf");
+  src: url("/src/assets/fonts/Ubuntu-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Ubuntu";
-  src: url("/src/assets/fonts/Ubuntu-Bold.ttf") format("ttf");
+  src: url("/src/assets/fonts/Ubuntu-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 
 a.active span {
-  @apply text-marine-blue bg-light-blue;
+  @apply text-marine-blue bg-light-blue border-light-blue;
+}
+
+.btn-next {
+  @apply w-[7.69rem] h-12 rounded-lg bg-marine-blue font-medium text-white hover:bg-marine-blue-hover border-none transition-all ease-in-out;
+}
+
+.btn-confirm {
+  @apply w-[7.69rem] h-12 rounded-lg bg-purplish-blue font-medium text-white transition-all ease-in-out hover:bg-purplish-blue-hover;
+}
+
+.btn-back {
+  @apply text-light-gray hover:text-marine-blue font-medium transition-all ease-in-out border-none;
 }
