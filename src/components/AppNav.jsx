@@ -1,69 +1,31 @@
 import { NavLink } from "react-router";
 
+const navLinks = ["Your info", "Select plan", "Add-ons", "Summary"];
+const path = ["/", "/plan", "/add-ons", "/summary"];
+
 function AppNav() {
   return (
-    <nav className="font-bold text-white uppercase">
-      <ul className="flex flex-col gap-4 px-8 text-sm">
-        <li>
-          <NavLink to="/" className="flex items-center">
-            <span
-              className="flex items-center justify-center w-8 h-8 mr-4 border border-white rounded-full"
-              aria-hidden="true"
-            >
-              1
-            </span>
+    <nav>
+      <ul className="h-[10.75rem] pr-[0.03rem] pb-[0.08rem] pt-9 flex justify-center text-sm font-bold text-white uppercase lg:h-auto lg:p-0 lg:mt-9 lg:ml-9 lg:flex lg:flex-col lg:gap-6 lg:mr-12">
+        {navLinks.map((link, index) => (
+          <li key={index}>
+            <NavLink to={path[index]} className="flex items-center">
+              <span
+                className="w-7 h-7 flex items-center justify-center mr-3 border border-white rounded-full"
+                aria-hidden="true"
+              >
+                {index + 1}
+              </span>
 
-            <div className="flex flex-col justify-between">
-              <p className="text-light-blue text-xs font-normal">Step 1</p>
-              <p className="tracking-[0.0625rem]">Your info</p>
-            </div>
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/plan" className="flex items-center">
-            <span
-              className="flex items-center justify-center w-8 h-8 mr-4 border border-white rounded-full"
-              aria-hidden="true"
-            >
-              2
-            </span>
-
-            <div className="flex flex-col justify-between">
-              <p className="text-light-blue text-xs font-normal">Step 2</p>
-              <p className="tracking-[0.0625rem]">Select plan</p>
-            </div>
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/add-ons" className="flex items-center">
-            <span
-              className="flex items-center justify-center w-8 h-8 mr-4 border border-white rounded-full"
-              aria-hidden="true"
-            >
-              3
-            </span>
-
-            <div className="flex flex-col justify-between">
-              <p className="text-light-blue text-xs font-normal">Step 3</p>
-              <p className="tracking-[0.0625rem]">Add-ons</p>
-            </div>
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/summary" className="flex items-center">
-            <span
-              className="flex items-center justify-center w-8 h-8 mr-4 border border-white rounded-full"
-              aria-hidden="true"
-            >
-              4
-            </span>
-
-            <div className="flex flex-col justify-between">
-              <p className="text-light-blue text-xs font-normal">Step 4</p>
-              <p className="tracking-[0.0625rem]">Summary</p>
-            </div>
-          </NavLink>
-        </li>
+              <div className="lg:flex lg:flex-col lg:justify-between hidden">
+                <p className="text-light-blue text-xs font-normal">
+                  Step {index + 1}
+                </p>
+                <p className=" tracking-[0.0625rem]">{link}</p>
+              </div>
+            </NavLink>
+          </li>
+        ))}
       </ul>
     </nav>
   );
