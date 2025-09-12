@@ -2,7 +2,7 @@ import AppNav from "./AppNav";
 
 function Sidebar() {
   return (
-    <div className="pt-8 min-h-[28rem] bg-sidebar-mobile md:bg-sidebar-desktop bg-no-repeat bg-center rounded-lg">
+    <div className="bg-sidebar-mobile lg:bg-sidebar-desktop lg:col-start-1 lg:col-end-2 lg:row-span-4 col-span-full lg:rounded-lg bg-center bg-no-repeat bg-cover">
       <AppNav />
     </div>
   );
