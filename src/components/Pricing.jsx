@@ -49,7 +49,7 @@ function Pricing() {
             className="w-10 h-10"
           />
           <div className=" lg:mt-auto lg:ml-0 flex flex-col justify-between ml-4">
-            <h3 className="text-marine-blue font-medium">{plan.type}</h3>
+            <h3 className="font-medium">{plan.type}</h3>
             <p className="text-light-gray text-sm">
               ${plan.pricing[pricingType]}/
               {pricingType === "monthly" ? "mo" : "yr"}
