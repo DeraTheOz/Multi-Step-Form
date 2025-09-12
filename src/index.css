@@ -23,16 +23,23 @@
   font-style: normal;
 }
 
+/* NAVIGATION LINKS */
 a.active span {
   @apply text-marine-blue bg-light-blue border-light-blue;
 }
 
+/* ACTIVE PLAN */
+.active-plan {
+  @apply border-purplish-blue bg-magnolia;
+}
+
+/* BUTTONS */
 .btn-next {
-  @apply w-[7.69rem] h-12 rounded-lg bg-marine-blue font-medium text-white hover:bg-marine-blue-hover border-none transition-all ease-in-out;
+  @apply w-[6.0625rem] md:w-[7.69rem] h-10 md:h-12 rounded-[0.25rem] md:rounded-lg bg-marine-blue font-medium text-white hover:bg-marine-blue-hover border-none transition-all ease-in-out;
 }
 
 .btn-confirm {
-  @apply w-[7.69rem] h-12 rounded-lg bg-purplish-blue font-medium text-white transition-all ease-in-out hover:bg-purplish-blue-hover;
+  @apply w-[6.0625rem] md:w-[7.69rem] h-10 md:h-12 rounded-[0.25rem] md:rounded-lg bg-purplish-blue font-medium text-white transition-all ease-in-out hover:bg-purplish-blue-hover;
 }
 
 .btn-back {
