@@ -23,11 +23,15 @@ export default {
         primary: "0 25px 40px -20px rgba(0, 0, 0, 0.10);",
       },
       backgroundImage: {
-        "sidebar-desktop": "url('/images/bg-sidebar-desktop.svg')",
         "sidebar-mobile": "url('/images/bg-sidebar-mobile.svg')",
+        "sidebar-desktop": "url('/images/bg-sidebar-desktop.svg')",
       },
       gridTemplateColumns: {
         custom: "17.125rem minmax(0,1fr) 1fr",
+      },
+      screens: {
+        sm: "360px",
+        lg: "960px",
       },
     },
   },
