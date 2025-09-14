@@ -30,41 +30,51 @@ const plans = [
 function Pricing() {
   // TESTING PURPOSES
   const [pricingType] = useState("monthly");
-  const [isActive] = useState(true);
+  const [selectedPlan, setSelectedPlan] = useState([]);
+
+  function togglePlan(plan) {
+    setSelectedPlan(plan);
+    console.log(selectedPlan);
+  }
 
   return (
-    <div className="gap-x-4 gap-y-7 grid mt-6">
-      {plans.map((plan, index) => (
-        <div
-          key={index}
-          className={`${
-            isActive ? "active-plan" : ""
-          } text-[0.9375rem] md:text-base border-light-gray hover:border-purplish-blue lg:h-[10.4rem] w-full lg:w-[8.5rem] lg:pl-2.5 lg:py-3 p-2.5 border rounded-lg cursor-pointer flex lg:flex-col`}
-          aria-label="Select Plan"
-        >
-          <img
-            src={plan.icon}
-            alt={`${plan.type} Icon`}
-            aria-label={`${plan.type} Icon`}
-            className="w-10 h-10"
-          />
-          <div className=" lg:mt-auto lg:ml-0 flex flex-col justify-between ml-4">
-            <h3 className="font-medium">{plan.type}</h3>
-            <p className="text-light-gray text-sm">
-              ${plan.pricing[pricingType]}/
-              {pricingType === "monthly" ? "mo" : "yr"}
-            </p>
-            {pricingType === "yearly" && (
-              <p className="text-xs">2 months free</p>
-            )}
-          </div>
-        </div>
-      ))}
+    <ul className="gap-x-4 gap-y-7 grid mt-6">
+      {plans.map((plan, index) => {
+        const isSelected = selectedPlan === plan;
+
+        return (
+          <li
+            key={index}
+            className={`${
+              isSelected && "active-plan"
+            } text-[0.9375rem] md:text-base border-light-gray hover:border-purplish-blue lg:h-[10.4rem] w-full lg:w-[8.5rem] lg:pl-2.5 lg:py-3 p-2.5 border rounded-lg cursor-pointer flex lg:flex-col`}
+            aria-label="Select Plan"
+            onClick={() => togglePlan(plan)}
+          >
+            <img
+              src={plan.icon}
+              alt={`${plan.type} Icon`}
+              aria-label={`${plan.type} Icon`}
+              className="w-10 h-10"
+            />
+            <div className=" lg:mt-auto lg:ml-0 flex flex-col justify-between ml-4">
+              <h3 className="font-medium">{plan.type}</h3>
+              <p className="text-light-gray text-sm">
+                ${plan.pricing[pricingType]}/
+                {pricingType === "monthly" ? "mo" : "yr"}
+              </p>
+              {pricingType === "yearly" && (
+                <p className="text-xs">2 months free</p>
+              )}
+            </div>
+          </li>
+        );
+      })}
 
       <div className="lg:bg-alabaster text-light-gray lg:col-start-1 lg:col-end-4 lg:row-start-2 lg:rounded-lg lg:h-12 flex items-center justify-center gap-6">
         <span
           className={`${
-            pricingType === "monthly" ? "text-marine-blue font-medium" : ""
+            pricingType === "monthly" && "text-marine-blue font-medium"
           }`}
         >
           Monthly
@@ -79,13 +89,13 @@ function Pricing() {
         </label>
         <span
           className={`${
-            pricingType === "yearly" ? "text-marine-blue font-medium" : ""
+            pricingType === "yearly" && "text-marine-blue font-medium"
           }`}
         >
           Yearly
         </span>
       </div>
-    </div>
+    </ul>
   );
 }
 
