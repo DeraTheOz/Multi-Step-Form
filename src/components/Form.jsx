@@ -66,7 +66,7 @@ function Form() {
                 </span>
               </label>
               <input
-                type="tel"
+                type="number"
                 id="number"
                 placeholder="e.g +1 234 567 890"
                 className="border-light-gray text-[0.9375rem] md:text-base placeholder-shown:text-marine-blue focus:border-purplish-blue focus:outline-none md:h-12 rounded-[0.25rem] md:rounded-lg w-full h-10 px-4 font-medium bg-white border cursor-pointer"
@@ -76,7 +76,7 @@ function Form() {
         </form>
       </div>
 
-      <div className="lg:mx-16 lg:mb-4 lg:mt-16 lg:p-0 sm:px-4 lg:col-start-2 lg:col-end-4 col-start-1 col-end-4 row-start-3 py-6 mt-32 text-right bg-white">
+      <div className="lg:mx-16 lg:mb-4 lg:mt-16 lg:p-0 sm:px-4 lg:col-start-2 lg:col-end-4 flex flex-row-reverse items-center col-start-1 col-end-4 row-start-3 py-6 mt-32 bg-white">
         <Button type="next" onClick={handleNext}>
           Next Step
         </Button>
