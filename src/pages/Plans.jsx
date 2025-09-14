@@ -25,7 +25,7 @@ function Plan() {
         <Pricing />
       </div>
 
-      <div className="lg:mx-16 lg:mb-4 lg:mt-20 lg:p-0 lg:col-start-2 lg:col-end-4 flex justify-between col-start-1 col-end-4 row-start-3 px-4 py-6 mt-32 bg-white">
+      <div className="lg:mx-16 lg:mb-4 lg:mt-20 lg:p-0 lg:col-start-2 lg:col-end-4 flex items-center justify-between col-start-1 col-end-4 row-start-3 px-4 py-6 mt-32 bg-white">
         <Button type="back" onClick={handlePrev}>
           Go Back
         </Button>
