@@ -28,8 +28,9 @@ a.active span {
   @apply text-marine-blue bg-light-blue border-light-blue;
 }
 
-/* ACTIVE PLAN */
-.active-plan {
+/* ACTIVE PLAN & ADD-ONS */
+.active-plan,
+.active-addOn {
   @apply border-purplish-blue bg-magnolia;
 }
 
@@ -44,4 +45,13 @@ a.active span {
 
 .btn-back {
   @apply text-light-gray hover:text-marine-blue font-medium transition-all ease-in-out border-none;
+}
+
+/* ACTIVE ADD-ONS */
+.active-addOn:has(.checkbox:checked) {
+  @apply border-purplish-blue bg-magnolia;
+}
+
+.checkbox:checked ~ div .check-icon {
+  @apply opacity-100;
 }
