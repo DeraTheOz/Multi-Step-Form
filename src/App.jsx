@@ -1,20 +1,20 @@
 import { BrowserRouter, Route, Routes } from "react-router";
 
-import Plan from "./pages/Plans";
-import AddOns from "./pages/AddOns";
-import Summary from "./pages/Summary";
+import PlanPage from "./pages/PlanPage";
+import AddOnsPage from "./pages/AddOnsPage";
+import SummaryPage from "./pages/SummaryPage";
 import HomePage from "./pages/HomePage";
-import Info from "./pages/Info";
+import InfoPage from "./pages/InfoPage";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />}>
-          <Route index element={<Info />}></Route>
-          <Route path="plan" element={<Plan />}></Route>
-          <Route path="add-ons" element={<AddOns />}></Route>
-          <Route path="summary" element={<Summary />}></Route>
+          <Route index element={<InfoPage />}></Route>
+          <Route path="plan" element={<PlanPage />}></Route>
+          <Route path="add-ons" element={<AddOnsPage />}></Route>
+          <Route path="summary" element={<SummaryPage />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>
