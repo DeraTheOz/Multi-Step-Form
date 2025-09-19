@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router";
 import Button from "../components/Button";
-import Pricing from "../components/Pricing";
+import PricingPlan from "../components/PricingPlan";
 
-function Plan() {
+function PlanPage() {
   const navigate = useNavigate();
   function handlePrev() {
     navigate("/");
@@ -22,7 +22,7 @@ function Plan() {
           You have the option of monthly or yearly billing
         </p>
 
-        <Pricing />
+        <PricingPlan />
       </div>
 
       <div className="lg:col-start-2 lg:mt-20 lg:mx-16 lg:p-0 lg:mb-4 flex items-center justify-between col-start-1 col-end-4 row-start-3 px-2 py-6 mt-32 bg-white">
@@ -37,4 +37,4 @@ function Plan() {
   );
 }
 
-export default Plan;
+export default PlanPage;

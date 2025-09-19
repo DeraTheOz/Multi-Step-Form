@@ -27,7 +27,7 @@ const plans = [
   },
 ];
 
-function Pricing() {
+function PricingPlan() {
   // TESTING PURPOSES
   const [pricingType] = useState("monthly");
   const [selectedPlan, setSelectedPlan] = useState([]);
@@ -102,4 +102,4 @@ function Pricing() {
   );
 }
 
-export default Pricing;
+export default PricingPlan;
