@@ -53,7 +53,7 @@ function AddOns() {
 
   return (
     <>
-      <div className="lg:shadow-none lg:rounded-none lg:col-start-2 lg:col-span-2 lg:mx-16 lg:m-0 lg:p-0 lg:mt-10 col-span-full py-10 px-4 md:px-8 mx-2 sm:mx-4 -mt-16 bg-white shadow-primary rounded-none sm:rounded-[0.63rem]">
+      <div className="bg-white shadow-primary rounded-[0.63rem] -mt-16 flex flex-col justify-center px-4 py-10 row-start-2 col-start-1 col-end-4 mx-2 lg:shadow-none lg:rounded-none lg:row-start-1 lg:col-start-2 lg:m-0 lg:p-0 lg:pt-10 lg:mx-16">
         <h3 className="text-2xl md:text-[2rem] font-bold mb-4">Pick add-ons</h3>
         <p className="text-light-gray leading-6">
           Add-ons help enhance your gaming experience.
@@ -69,7 +69,7 @@ function AddOns() {
                 key={index}
                 className={`${
                   isSelected && "active-addOn"
-                } border-light-gray hover:border-purplish-blue h-[4.5rem] md:px-5 px-2.5 border rounded-lg cursor-pointer flex items-center transition-colors`}
+                } border-light-gray hover:border-purplish-blue h-[4.375rem] md:px-5 px-2.5 border rounded-lg cursor-pointer flex items-center transition-colors`}
                 aria-label={addOn.type}
                 onClick={() => toggleAddOn(index)}
               >
@@ -112,7 +112,7 @@ function AddOns() {
         </ul>
       </div>
 
-      <div className="lg:mx-16 lg:mb-4 lg:mt-20 lg:p-0 lg:col-start-2 lg:col-end-4 flex items-center justify-between col-start-1 col-end-4 row-start-3 px-4 py-6 mt-32 bg-white">
+      <div className="lg:col-start-2 lg:mt-20 lg:mx-16 lg:p-0 lg:mb-4 flex items-center justify-between col-start-1 col-end-4 row-start-3 px-2 py-6 mt-32 bg-white">
         <Button type="back" onClick={handlePrev}>
           Go Back
         </Button>
