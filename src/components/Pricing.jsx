@@ -38,7 +38,7 @@ function Pricing() {
   }
 
   return (
-    <ul className="gap-x-4 gap-y-7 grid mt-6">
+    <ul className="lg:gap-x-4 gap-y-7 lg:grid-cols-3 grid grid-cols-1 mt-6 lg:w-[28rem]">
       {plans.map((plan, index) => {
         const isSelected = selectedPlan === plan;
 
@@ -47,7 +47,7 @@ function Pricing() {
             key={index}
             className={`${
               isSelected && "active-plan"
-            } text-[0.9375rem] md:text-base border-light-gray hover:border-purplish-blue lg:h-[10.4rem] w-full lg:w-[8.5rem] lg:pl-2.5 lg:py-3 p-2.5 border rounded-lg cursor-pointer flex lg:flex-col`}
+            } text-[0.9375rem] md:text-base border-light-gray hover:border-purplish-blue md:h-20 lg:h-[10.4rem] w-full lg:w-[8.5rem] lg:pl-2.5 lg:py-3 p-2.5 border rounded-lg cursor-pointer flex lg:flex-col`}
             aria-label="Select Plan"
             onClick={() => togglePlan(plan)}
           >
@@ -71,10 +71,11 @@ function Pricing() {
         );
       })}
 
-      <div className="lg:bg-alabaster text-light-gray lg:col-start-1 lg:col-end-4 lg:row-start-2 lg:rounded-lg lg:h-12 flex items-center justify-center gap-6">
+      <div className="lg:bg-alabaster text-light-gray lg:col-start-1 lg:col-end-4 lg:row-start-2 lg:rounded-lg flex items-center justify-center h-12 gap-6">
         <span
           className={`${
-            pricingType === "monthly" && "text-marine-blue font-medium"
+            pricingType === "monthly" &&
+            "text-marine-blue font-medium transition-colors"
           }`}
         >
           Monthly
@@ -85,11 +86,13 @@ function Pricing() {
             className="peer sr-only"
             aria-label="Toggle pricing plan"
           />
-          <div className="w-[2.375rem] h-5 bg-marine-blue peer-focus:outline-none rounded-full peer-checked:after:translate-x-4 after:content-[''] after:absolute after:top-[2.5px] after:left-[4px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all after:ease-in"></div>
+
+          <div className="w-[2.5rem] h-6 bg-marine-blue peer-focus:outline-none rounded-full peer-checked:after:translate-x-full after:content-[''] after:absolute after:-translate-y-1/2 after:top-1/2 after:left-[4px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all after:ease-in"></div>
         </label>
         <span
           className={`${
-            pricingType === "yearly" && "text-marine-blue font-medium"
+            pricingType === "yearly" &&
+            "text-marine-blue font-medium transition-colors"
           }`}
         >
           Yearly
