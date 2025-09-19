@@ -9,15 +9,15 @@ function Form() {
 
   return (
     <>
-      <div className="lg:shadow-none lg:rounded-none lg:col-start-2 lg:col-span-2 lg:mx-16 lg:m-0 lg:p-0 lg:mt-10 col-span-full py-10 px-4 md:px-8 mx-2 sm:mx-4 -mt-16 bg-white shadow-primary rounded-none sm:rounded-[0.63rem]">
-        <h3 className=" text-2xl md:text-[2rem] font-bold mb-4">
+      <div className="bg-white shadow-primary rounded-[0.63rem] -mt-16 flex flex-col justify-center px-4 py-10 row-start-2 col-start-1 col-end-4 mx-2 lg:shadow-none lg:rounded-none lg:row-start-1 lg:col-start-2 lg:m-0 lg:p-0 lg:pt-10 lg:mx-16">
+        <h3 className="text-2xl md:text-[2rem] font-bold mb-4">
           Personal Info
         </h3>
         <p className="text-light-gray leading-6">
           Please provide your name, email address, and phone number.
         </p>
 
-        <form className="flex flex-col mt-6">
+        <form className="flex flex-col mt-6 lg:w-[28rem]">
           <div className="space-y-4">
             <div>
               <label
@@ -33,7 +33,7 @@ function Form() {
                 type="text"
                 id="name"
                 placeholder="Vanessa Mint"
-                className="border-light-gray text-[0.9375rem] md:text-base  placeholder-shown:text-marine-blue focus:border-purplish-blue focus:outline-none w-full h-10 md:h-12 px-4 font-medium bg-white border rounded-[0.25rem] md:rounded-lg cursor-pointer"
+                className="border-light-gray text-[0.9375rem] md:text-base  placeholder-shown:text-marine-blue focus:border-purplish-blue focus:outline-none w-full h-12 px-4 font-medium bg-white border rounded-[0.25rem] md:rounded-lg cursor-pointer"
               />
             </div>
 
@@ -50,8 +50,8 @@ function Form() {
               <input
                 type="email"
                 id="email"
-                placeholder="vanessamint@gmai.com"
-                className="border-light-gray text-[0.9375rem] md:text-base placeholder-shown:text-marine-blue focus:border-purplish-blue focus:outline-none md:h-12 rounded-[0.25rem] md:rounded-lg w-full h-10 px-4 font-medium bg-white border cursor-pointer"
+                placeholder="vanessamint@gmail.com"
+                className="border-light-gray text-[0.9375rem] md:text-base placeholder-shown:text-marine-blue focus:border-purplish-blue focus:outline-none h-12 rounded-[0.25rem] md:rounded-lg w-full px-4 font-medium bg-white border cursor-pointer"
               />
             </div>
 
@@ -69,14 +69,14 @@ function Form() {
                 type="number"
                 id="number"
                 placeholder="e.g +1 234 567 890"
-                className="border-light-gray text-[0.9375rem] md:text-base placeholder-shown:text-marine-blue focus:border-purplish-blue focus:outline-none md:h-12 rounded-[0.25rem] md:rounded-lg w-full h-10 px-4 font-medium bg-white border cursor-pointer"
+                className="border-light-gray text-[0.9375rem] md:text-base placeholder-shown:text-marine-blue focus:border-purplish-blue focus:outline-none h-12 rounded-[0.25rem] md:rounded-lg w-full px-4 font-medium bg-white border cursor-pointer"
               />
             </div>
           </div>
         </form>
       </div>
 
-      <div className="lg:mx-16 lg:mb-4 lg:mt-16 lg:p-0 sm:px-4 lg:col-start-2 lg:col-end-4 flex flex-row-reverse items-center col-start-1 col-end-4 row-start-3 py-6 mt-32 bg-white">
+      <div className="lg:col-start-2 lg:mt-16 lg:mx-16 lg:p-0 lg:mb-4 flex flex-row-reverse items-center col-start-1 col-end-4 row-start-3 px-2 py-6 mt-32 bg-white">
         <Button type="next" onClick={handleNext}>
           Next Step
         </Button>
