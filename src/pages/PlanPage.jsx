@@ -1,14 +1,19 @@
 import { useNavigate } from "react-router";
+import { useSelector } from "react-redux";
+
 import Button from "../components/Button";
 import PricingPlan from "../components/PricingPlan";
 
 function PlanPage() {
   const navigate = useNavigate();
+  const { planSelected } = useSelector((state) => state.plan);
+
   function handlePrev() {
     navigate("/");
   }
 
   function handleNext() {
+    if (planSelected.length === 0) return;
     navigate("/add-ons");
   }
 
