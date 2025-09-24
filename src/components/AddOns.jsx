@@ -1,4 +1,7 @@
-import { useState } from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import { billingType, selectedAddOns } from "../features/addOns/addOnSlice";
 
 const addOns = [
   {
@@ -28,23 +31,27 @@ const addOns = [
 ];
 
 function AddOns() {
-  // TESTING PURPOSES
-  const [pricingType] = useState("monthly");
-  const [selectedAddOns, setSelectedAddOns] = useState([]);
+  const dispatch = useDispatch();
+  const { billing: pricingType } = useSelector((state) => state.plan);
+  const { addOnSelected } = useSelector((state) => state.addOns);
 
-  function toggleAddOn(index) {
-    setSelectedAddOns((prevSelected) => {
-      if (prevSelected.includes(index))
-        return prevSelected.filter((i) => i !== index);
+  useEffect(
+    function () {
+      dispatch(billingType(pricingType));
+    },
+    [dispatch, pricingType]
+  );
 
-      return [...prevSelected, index];
-    });
+  function toggleAddOn(addOn) {
+    dispatch(selectedAddOns(addOn));
   }
 
   return (
     <ul className="flex flex-col mt-6 space-y-4 lg:w-[28rem]">
       {addOns.map((addOn, index) => {
-        const isSelected = selectedAddOns.includes(index);
+        const isSelected = addOnSelected.some(
+          (item) => item.type === addOn.type
+        );
 
         return (
           <li
@@ -53,7 +60,7 @@ function AddOns() {
               isSelected && "active-addOn"
             } border-light-gray hover:border-purplish-blue h-[4.375rem] md:px-5 px-2.5 border rounded-lg cursor-pointer flex items-center transition-colors`}
             aria-label={addOn.type}
-            onClick={() => toggleAddOn(index)}
+            onClick={() => toggleAddOn(addOn)}
           >
             <label
               htmlFor={`check-box-${index}`}
@@ -65,7 +72,7 @@ function AddOns() {
                 className="checkbox peer w-5 h-5 outline-none appearance-none"
                 aria-label={addOn.type}
                 checked={isSelected}
-                onChange={() => toggleAddOn(index)}
+                onChange={() => toggleAddOn(addOn)}
               />
               <div className="border-light-gray peer-checked:border-purplish-blue peer-checked:bg-purplish-blue absolute flex items-center justify-center w-5 h-5 transition-colors duration-200 ease-in border rounded-sm cursor-pointer">
                 <img
