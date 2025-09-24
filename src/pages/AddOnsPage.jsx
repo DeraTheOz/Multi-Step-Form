@@ -1,14 +1,18 @@
 import { useNavigate } from "react-router";
 import Button from "../components/Button";
 import AddOns from "../components/AddOns";
+import { useSelector } from "react-redux";
 
 function AddOnsPage() {
   const navigate = useNavigate();
+  const { addOnSelected } = useSelector((state) => state.addOns);
+
   function handlePrev() {
     navigate("/plan");
   }
 
   function handleNext() {
+    if (addOnSelected.length === 0) return;
     navigate("/summary");
   }
 
