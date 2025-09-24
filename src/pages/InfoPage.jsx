@@ -1,12 +1,67 @@
 import { useNavigate } from "react-router";
 import Button from "../components/Button";
 import Form from "../components/Form";
+import { useDispatch, useSelector } from "react-redux";
+
+import { setErrors } from "../features/user-info/userInfoSlice";
+import { validateForm } from "../features/user-info/userInfoActions";
 
 function InfoPage() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { fullName, emailAddress, phoneNumber } = useSelector(
+    (state) => state.userInfo
+  );
+
   function handleNext() {
-    navigate("/plan");
+    const errors = validateForm({ fullName, emailAddress, phoneNumber });
+    dispatch(setErrors(errors));
+    console.log(errors);
+
+    // Check if there are NO errors
+    if (!Object.values(errors).some((error) => error !== null)) {
+      navigate("/plan");
+    }
   }
+
+  /*
+  function validateForm() {
+    const name = fullName.trim().replace(/\s+/g, " ");
+    const normalizedPhone = phoneNumber.replace(/[\s\-()]/g, "");
+
+    const nameRegex = /^[\p{L}][\p{L}\p{M}' .-]{1,149}$/u;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    const phoneRegex = /^\+?[0-9]{7,15}$/;
+
+    const newErrors = {
+      fullName: !name
+        ? "This field is required"
+        : !nameRegex.test(name)
+        ? "Must be at least 2 letters"
+        : null,
+      emailAddress: !emailAddress
+        ? "This field is required"
+        : !emailRegex.test(emailAddress)
+        ? "Invalid email address"
+        : null,
+      phoneNumber: !phoneNumber
+        ? "This field is required"
+        : !phoneRegex.test(normalizedPhone)
+        ? "At least 11 digits"
+        : null,
+    };
+    dispatch(setErrors(newErrors));
+
+    // Return true if NO errors
+    return !Object.values(newErrors).some((error) => error !== null);
+  }
+
+  function handleNext() {
+    if (validateForm()) {
+      navigate("/plan");
+    }
+  }
+  */
 
   return (
     <>
