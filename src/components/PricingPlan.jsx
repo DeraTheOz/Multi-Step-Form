@@ -6,7 +6,7 @@ const plans = [
   {
     type: "Arcade",
     icon: "/images/icon-arcade.svg",
-    pricing: {
+    billing: {
       monthly: 9,
       yearly: 90,
     },
@@ -14,7 +14,7 @@ const plans = [
   {
     type: "Advanced",
     icon: "/images/icon-advanced.svg",
-    pricing: {
+    billing: {
       monthly: 12,
       yearly: 120,
     },
@@ -22,7 +22,7 @@ const plans = [
   {
     type: "Pro",
     icon: "/images/icon-pro.svg",
-    pricing: {
+    billing: {
       monthly: 15,
       yearly: 150,
     },
@@ -35,14 +35,11 @@ function PricingPlan() {
 
   function togglePlan(plan) {
     dispatch(selectedPlan(plan));
-    console.log(plan);
   }
 
   function toggleBilling() {
     const selectedBilling = billing === "monthly" ? "yearly" : "monthly";
-
     dispatch(billingType(selectedBilling));
-    console.log(selectedBilling);
   }
 
   return (
@@ -68,7 +65,7 @@ function PricingPlan() {
             <div className=" lg:mt-auto lg:ml-0 flex flex-col justify-between ml-4">
               <h3 className="font-medium">{plan.type}</h3>
               <p className="text-light-gray text-sm">
-                ${plan.pricing[billing]}/{billing === "monthly" ? "mo" : "yr"}
+                ${plan.billing[billing]}/{billing === "monthly" ? "mo" : "yr"}
               </p>
               {billing === "yearly" && <p className="text-xs">2 months free</p>}
             </div>
