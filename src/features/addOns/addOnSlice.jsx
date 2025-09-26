@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  billing: "monthly",
   addOnSelected: [],
 };
 
@@ -9,29 +8,22 @@ const addOnSlice = createSlice({
   name: "addOns",
   initialState,
   reducers: {
-    billingType(state, action) {
-      state.billing = action.payload;
-    },
-
     selectedAddOns(state, action) {
-      const addOn = action.payload;
       const addOnExists = state.addOnSelected.find(
-        (item) => item.type === addOn.type
+        (item) => item.type === action.payload.type
       );
 
-      // Remove the addOn it it already exists
       if (addOnExists) {
         state.addOnSelected = state.addOnSelected.filter(
-          (item) => item.type !== addOn.type
+          (item) => item.type !== action.payload.type
         );
       } else {
-        // push the addOn to state
-        state.addOnSelected.push(addOn);
+        state.addOnSelected.push(action.payload);
       }
     },
   },
 });
 
-export const { billingType, selectedAddOns } = addOnSlice.actions;
+export const { selectedAddOns } = addOnSlice.actions;
 
 export default addOnSlice.reducer;
