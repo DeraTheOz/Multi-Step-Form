@@ -3,16 +3,24 @@ import Button from "../components/Button";
 import { useState } from "react";
 import SubscriptionConfirmation from "../components/SubscriptionConfirmation";
 import SummaryDetails from "../components/SummaryDetails";
+import { useDispatch } from "react-redux";
 
 function SummaryPage() {
   const [isComplete, setIsComplete] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   function handlePrev() {
     navigate("/add-ons");
   }
 
   function handleConfirm() {
     setIsComplete((complete) => !complete);
+
+    setTimeout(() => {
+      dispatch({ type: "reset" }); // reset store state
+      navigate("/");
+    }, 5000);
   }
 
   return !isComplete ? (
