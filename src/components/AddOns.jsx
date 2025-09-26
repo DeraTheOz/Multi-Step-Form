@@ -1,46 +1,41 @@
-import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { billingType, selectedAddOns } from "../features/addOns/addOnSlice";
+import { selectedAddOns } from "../features/addOns/addOnSlice";
 
 const addOns = [
   {
     type: "Online service",
     description: "Access to multiplayer games",
-    pricing: {
+    billing: {
       monthly: 1,
       yearly: 10,
     },
+    selectedBilling: "monthly",
   },
   {
     type: "Larger storage",
     description: "Extra 1TB of cloud save",
-    pricing: {
+    billing: {
       monthly: 2,
       yearly: 20,
     },
+    selectedBilling: "monthly",
   },
   {
     type: "Customizable profile",
     description: "Custom theme on your profiles",
-    pricing: {
+    billing: {
       monthly: 2,
       yearly: 20,
     },
+    selectedBilling: "monthly",
   },
 ];
 
 function AddOns() {
   const dispatch = useDispatch();
-  const { billing: pricingType } = useSelector((state) => state.plan);
+  const { billing } = useSelector((state) => state.plan); // get billing state from planSlice
   const { addOnSelected } = useSelector((state) => state.addOns);
-
-  useEffect(
-    function () {
-      dispatch(billingType(pricingType));
-    },
-    [dispatch, pricingType]
-  );
 
   function toggleAddOn(addOn) {
     dispatch(selectedAddOns(addOn));
@@ -90,8 +85,7 @@ function AddOns() {
             </div>
 
             <p className="text-purplish-blue ml-auto text-xs">
-              +${addOn.pricing[pricingType]}/
-              {pricingType === "monthly" ? "mo" : "yr"}
+              +${addOn.billing[billing]}/{billing === "monthly" ? "mo" : "yr"}
             </p>
           </li>
         );
