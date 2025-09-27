@@ -17,7 +17,6 @@ const userInfoSlice = createSlice({
   reducers: {
     handleFormUpdate(state, action) {
       const { inputField, value } = action.payload;
-      console.log(action.payload);
       state[inputField] = value;
     },
 

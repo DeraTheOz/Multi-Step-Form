@@ -16,11 +16,10 @@ function InfoPage() {
   function handleNext() {
     const errors = validateForm({ fullName, emailAddress, phoneNumber });
     dispatch(setErrors(errors));
-    console.log(errors);
 
     // Check if there are NO errors
     if (!Object.values(errors).some((error) => error !== null)) {
-      navigate("/plan");
+      navigate("plan");
     }
   }
 
