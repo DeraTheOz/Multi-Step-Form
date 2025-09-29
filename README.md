@@ -1,12 +1,71 @@
-# React + Vite
+# Multi-Step Form
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This project is a modern, responsive multi-step form application built with React and powered by Redux Toolkit for efficient state management. It guides users through collecting personal information, selecting a subscription plan (monthly or yearly), choosing additional services, and reviewing a final summary before confirmation.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Multi-Step Navigation**: Seamless progression through "Your info", "Select Plan", "Add-ons", and "Summary" pages.
+- **Personal Information Collection**: Gathers user's name, email, and phone number with real-time validation.
+- **Dynamic Plan Selection**: Users can choose between Arcade, Advanced, and Pro plans with flexible monthly or yearly billing options.
+- **Customizable Add-ons**: Options to select additional services like online service, larger storage, and a customizable profile.
+- **Interactive Summary**: Displays a detailed breakdown of selected plan and add-ons, dynamically updating costs.
+- **Form Validation**: Client-side validation ensures all required fields are correctly filled before proceeding.
+- **Responsive Design**: Optimized for a seamless experience across various devices using Tailwind CSS.
+- **Centralized State Management**: Utilizes Redux Toolkit for predictable and scalable application state.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Usage
+
+To use the Multi-Step Form, follow these steps:
+
+1.  **Provide Personal Information**:
+
+    - On the initial "Your info" page, enter your full name, email address, and phone number.
+    - The form includes validation for each field. Ensure all inputs are valid to proceed.
+    - Click "Next Step" to move to the plan selection.
+
+2.  **Select Your Plan**:
+
+    - Choose one of the available plans: Arcade, Advanced, or Pro.
+    - Toggle between "Monthly" and "Yearly" billing to see the corresponding prices. Yearly plans often include a discount (2 months free).
+    - Click "Next Step" to continue to add-ons. You can click "Go Back" to revisit the previous step.
+
+3.  **Choose Add-ons**:
+
+    - Select any additional services you'd like to include with your plan by checking the corresponding boxes.
+    - The prices for add-ons will adjust based on your selected billing cycle (monthly or yearly).
+    - Click "Next Step" to proceed to the summary, or "Go Back" to adjust your plan.
+
+4.  **Review and Confirm**:
+    - The "Summary" page displays a comprehensive overview of your chosen plan, billing cycle, and all selected add-ons, along with the total cost.
+    - You can click "Change" next to your plan to go back and modify your selection.
+    - If everything looks correct, click "Confirm" to finalize your subscription.
+    - After confirmation, you will see a thank-you message and the form will reset, ready for a new subscription.
+
+## Technologies Used
+
+| Technology        | Description                                                                                     |
+| :---------------- | :---------------------------------------------------------------------------------------------- |
+| **React**         | A JavaScript library for building user interfaces.                                              |
+| **Redux Toolkit** | Official, opinionated, batteries-included toolset for efficient Redux development.              |
+| **React Router**  | Declarative routing for React.js.                                                               |
+| **Tailwind CSS**  | A utility-first CSS framework for rapidly building custom designs.                              |
+| **Vite**          | A fast build tool for modern web projects.                                                      |
+| **ESLint**        | Pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. |
+
+## Author Info
+
+Connect with me:
+
+- **LinkedIn**: [Your LinkedIn Profile](www.linkedin.com/in/emmanuel-ihemedu)
+- **Twitter**: [Your Twitter Profile](https://twitter.com/deraamaobi)
+
+---
+
+[![React](https://img.shields.io/badge/React-19.1.1-61DAFB?logo=react&logoColor=white)](https://react.dev/)
+[![Redux Toolkit](https://img.shields.io/badge/Redux_Toolkit-2.9.0-764ABC?logo=redux&logoColor=white)](https://redux-toolkit.js.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4.17-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Vite](https://img.shields.io/badge/Vite-7.1.2-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
+
+[![Readme was generated by Dokugen](https://img.shields.io/badge/Readme%20was%20generated%20by-Dokugen-brightgreen)](https://www.npmjs.com/package/dokugen)
